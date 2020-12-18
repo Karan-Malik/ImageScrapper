@@ -87,7 +87,7 @@ def persist_image(folder_path,url):
         
 
         
-def search_and_download(search_term:str,driver_path:str,target_path='./images',number_images=5):
+def search_and_download(search_term:str,driver_path:str,target_path='./images',number_images=5): #specify the name of the folder in which the images have to be saved in target_path
     target_folder = os.path.join(target_path,'_'.join(search_term.lower().split(' ')))
 
     if not os.path.exists(target_folder):
@@ -102,6 +102,7 @@ def search_and_download(search_term:str,driver_path:str,target_path='./images',n
 
 
 #ADD DRIVER PATH
+#Chrome driver for Google Chrome version 87.* is present in the repository.
 driver_path=r'chromedriver.exe'
 
 
@@ -114,6 +115,6 @@ search_terms=['eiffel tower',
 
 #Data stored in folder 'images'
 for search_term in search_terms:
-    search_and_download(search_term, driver_path,number_images=10)
+    search_and_download(search_term, driver_path,number_images=10) 
     print('DOWNLOADED: ',search_term)
     
